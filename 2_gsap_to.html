@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2_gsap_to</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            margin: 15px;
+        }
+        .box1{
+            background-color: orange;
+        }
+        .box2{
+            background-color: greenyellow;
+        }
+        .box3{
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script>
+        gsap.to(".box1",{
+            x:300,
+            opacity:0.2,
+            ease:"steps(10)",
+            duration:5,
+            delay:2
+        });
+        // 위치 이동 회전, 크기크게
+        gsap.to(".box2",{
+            duration:5,
+            xPercent:50,
+            rotate:360,
+            scale:1.5
+        })
+        // 3ch, x 300 ease, 배경색, width, 글자크기
+        gsap.to(".box3",{
+            duration:3,
+            x:300,
+            ease:"elastic",
+            backgroundColor:"red",
+            width:300,
+            fontSize:60
+        })
+    </script>
+</body>
+</html>

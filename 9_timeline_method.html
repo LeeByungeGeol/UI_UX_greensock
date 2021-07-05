@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9_timeline_method</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">box</div>
+    <div class="control">
+        <button id="play">play</button>
+        <button id="pause">pause</button>
+        <button id="resume">resume</button>
+        <button id="reverse">reverse</button>
+        <button id="restart">restart</button>
+    </div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script>
+        // 애니메이션 효과를 변수에 넣기
+        let ani = gsap.to(".box",{
+            duraction:10,
+            x: 600,
+            width:400,
+            opacity:0.2,
+            paused:true
+        })
+        // 시작
+        $("#play").on("click",function(){
+            ani.play();
+        })
+        // 일시정지
+        $("#pause").on("click",function(){
+            ani.pause();
+        })
+        // 일시정지에서 재시작
+        $("#resume").on("click",function(){
+            ani.resume();
+        })
+        // 역순으로 실행
+        $("#reverse").on("click",function(){
+            ani.reverse();
+        })
+        //처음부터
+        $("#restart").on("click",function(){
+            ani.restart();
+        })
+    </script>
+</body>
+</html>
